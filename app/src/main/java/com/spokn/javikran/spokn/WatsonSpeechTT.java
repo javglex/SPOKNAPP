@@ -85,7 +85,7 @@ class WatsonSpeechTT {
     private void showMicText(final String text) {
         activity.runOnUiThread(new Runnable() {
             @Override public void run() {
-                TextView t = (TextView)activity.findViewById(R.id.hellow);
+                TextView t = (TextView)activity.findViewById(R.id.tv_results);
                 t.setText(text);
 
             }
@@ -108,8 +108,12 @@ class WatsonSpeechTT {
                 .contentType(ContentType.OPUS.toString())
                 .model("en-US_BroadbandModel")
                 .interimResults(true)
+                .keywords(new String[]{"colorado", "tornado", "tornadoes","wetland", "locale"})
+                .keywordsThreshold(0.5)
+                .wordAlternativesThreshold(0.9)
+                .wordConfidence(true)
                 .timestamps(true)
-                .inactivityTimeout(500)
+                .inactivityTimeout(1000)
                 .build();
     }
 
@@ -128,6 +132,7 @@ class WatsonSpeechTT {
         public void onTranscription(SpeechResults speechResults) {
             System.out.println(speechResults);
             String text = speechResults.getResults().get(0).getAlternatives().get(0).getTranscript();
+
             String tText="";
             try{
                 tText=speechResults.getResults().get(0).getAlternatives().get(0).getTimestamps().toString();
@@ -136,7 +141,7 @@ class WatsonSpeechTT {
                 tText="err";
             }
             System.out.println(text);
-            System.out.println(tText);
+            //System.out.println(tText);
             showMicText(text);
         }
 

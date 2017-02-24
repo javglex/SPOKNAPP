@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#f9f9f9</color>
-    <color name="background">#f9f9f9</color>
+    <color name="colorPrimary">#0072bc</color>
+    <color name="colorPrimaryDark">#3a4650</color>
+    <color name="colorAccent">#f7f11e</color>
+    <color name="background">#768998</color>
+    <color name="backgroundProgress">#768998</color>
+    <color name="startdesc">#f7f11e</color>
+    <color name="title_text">#ffffff</color>
     <color name="gray">#D3D3D3</color>
     <color name="bodyText">#00000F</color>
     <color name="album_title">#000000</color>
-    <color name="backgroundDim">#75000000</color>
+    <color name="backgroundDim">#D100000f</color>
 
 </resources>

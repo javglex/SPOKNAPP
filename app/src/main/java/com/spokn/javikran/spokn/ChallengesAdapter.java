@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
         public TextView title, desc;
         public CardView cv;
         public ImageView thumbnail, overflow;
-
+        public Button btn;
         public MyViewHolder(View view, int viewType) {
             super(view);
             if (viewType==1) {
@@ -43,7 +44,7 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
                 // overflow = (ImageView) view.findViewById(R.id.overflow);
             }
             if (viewType==0){   //header view
-                title=(TextView) view.findViewById(R.id.btn_startchallenge);
+                btn=(Button) view.findViewById(R.id.btn_startchallenge);
             }
         }
     }
@@ -82,7 +83,18 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
 
         switch (holder.getItemViewType()) {
             case 0:     //header view
-                holder.title.setText("START");
+                holder.btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //inflate card page
+                        CardPageFragment nextFrag= CardPageFragment.newInstance(challengeList.get(1).GetName(),challengeList.get(1).GetLongDescription());
+                        getRequiredActivity(view).getFragmentManager().beginTransaction()
+                                .replace(R.id.cardpagecontent, nextFrag, null)
+                                .addToBackStack(null)
+                                .commit();
+
+                    }
+                });
             break;
             default:        //challenge card
                 Challenge challenge = challengeList.get(position);
@@ -90,7 +102,11 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
                 holder.desc.setText(challenge.GetShortDescription());
 
                 // loading album cover using Glide library
-                Glide.with(mContext).load(challenge.GetImage()).fitCenter().into(holder.thumbnail);
+                Glide.with(mContext)
+                        .load(challenge.GetImage())
+                        .fitCenter()
+                        .dontAnimate()
+                        .into(holder.thumbnail);
 
                /* holder.overflow.setOnClickListener(new View.OnClickListener() {
                     @Override

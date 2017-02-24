@@ -1,5 +1,6 @@
 package com.spokn.javikran.spokn;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.os.AsyncTask;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView nvDrawer;
     private ImageView imgNavHeaderBg, imgProfile;
     private TextView txtName, txtWebsite;
+    private Button btn_start;
     // urls to load navigation header background image
     // and profile image
     private static final String urlProfileImg = "https://scontent.fsnc1-3.fna.fbcdn.net/v/t1.0-9/16114127_1414970941848588_8452862320903310501_n.jpg?oh=2b39b898655f4c38b7fe93a68a6d2190&oe=5943615A";
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         // Find our drawer view
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nvView);
@@ -98,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Progress"));
         //tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
                 (getFragmentManager(), tabLayout.getTabCount());

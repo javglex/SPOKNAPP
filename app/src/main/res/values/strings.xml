@@ -8,6 +8,6 @@
     <string name="challenge_info">Info</string>
     <string name="backdrop_title">Challenges</string>
     <string name="backdrop_subtitle">Choose any exercise</string>
-
+    <string name="starttext">START will take you to a recommended challenge</string>
 
 </resources>

@@ -48,7 +48,7 @@ public class TabFragment1 extends Fragment {
         challengeList = new ArrayList<>();
         adapter = new ChallengesAdapter(this.getActivity(), challengeList);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 1);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 1); //change number of cols here
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -73,17 +73,17 @@ public class TabFragment1 extends Fragment {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1,
-                R.mipmap.album1};
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground,
+                R.mipmap.img_cardbackground};
 
         Challenge a = new Challenge(getString(R.string.challenge1_name), getString(R.string.challenge1_short),getString(R.string.challenge1_long), covers[0]);
         challengeList.add(a);

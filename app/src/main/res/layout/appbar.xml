@@ -25,7 +25,7 @@
         android:background="?attr/colorPrimary"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/AppTheme.NoActionBar"
         android:layout_marginTop="?attr/actionBarSize" />
 
     <android.support.v4.view.ViewPager

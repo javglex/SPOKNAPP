@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal">
 
     <Button
         android:id="@+id/btn_startchallenge"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/start_textview_circle"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
+        android:background="@drawable/btnstart"
         android:gravity="center_vertical|center_horizontal"
-        android:text="Start"
         android:elevation="4dp"
-        android:textColor="#fff" />
+        android:textColor="@color/title_text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:text="@string/starttext"
+        android:gravity="center_horizontal"
+        android:textSize="16sp"
+        android:textColor="@color/startdesc"
+        android:background="@drawable/txt_start_rounded" />
+
 
 </LinearLayout>

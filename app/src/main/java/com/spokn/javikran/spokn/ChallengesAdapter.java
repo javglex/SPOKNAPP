@@ -2,6 +2,7 @@ package com.spokn.javikran.spokn;
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, desc;
+        public CardView cv;
         public ImageView thumbnail, overflow;
 
         public MyViewHolder(View view, int viewType) {
@@ -37,6 +39,7 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
                 title = (TextView) view.findViewById(R.id.title);
                 desc = (TextView) view.findViewById(R.id.desc);
                 thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+                cv=(CardView) view.findViewById(R.id.card_view);
                 // overflow = (ImageView) view.findViewById(R.id.overflow);
             }
             if (viewType==0){   //header view
@@ -95,8 +98,13 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
                         showPopupMenu(holder.overflow);
                     }
                 });*/
-
                 holder.thumbnail.setOnClickListener((new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view){
+                        showCardPage(holder.thumbnail,position);
+                    }
+                }));
+                holder.cv.setOnClickListener((new View.OnClickListener() {
                     @Override
                     public void onClick(View view){
                         showCardPage(holder.thumbnail,position);

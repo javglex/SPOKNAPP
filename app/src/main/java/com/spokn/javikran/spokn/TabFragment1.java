@@ -57,7 +57,9 @@ public class TabFragment1 extends Fragment {
         prepareAlbums();
 
         try {
-            Glide.with(this).load(R.drawable.ic_mic_none_black_24dp).into((ImageView) view.findViewById(R.id.backdrop));
+            Glide.with(this).load(R.drawable.ic_mic_none_black_24dp)
+                    .dontAnimate()
+                    .into((ImageView) view.findViewById(R.id.backdrop));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.target.Target;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
@@ -73,8 +74,9 @@ public class MainActivity extends AppCompatActivity {
         // loading header background image
         Glide.with(this).load(R.mipmap.ic_navbac)
                 .crossFade()
-                .centerCrop()
+                .override(700,200) // == LinearLayout's fixed 50dp from xml
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .dontAnimate()
                 .into(imgNavHeaderBg);
 
         // Loading profile image

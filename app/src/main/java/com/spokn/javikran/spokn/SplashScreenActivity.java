@@ -31,7 +31,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     private void startAnimations() {
         Animation anim;
 
-        anim = AnimationUtils.loadAnimation(this, R.anim.translate_splash);
+        anim = AnimationUtils.loadAnimation(this, R.anim.translate_splash_in);
         anim.reset();
         ImageView iv = (ImageView) findViewById(R.id.splashlogo);
         iv.clearAnimation();

@@ -16,6 +16,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:layout_below="@layout/appbar"
+        android:background="@drawable/rounded_textview"
+
         >
 
         <TextView
@@ -23,7 +25,7 @@
             android:paddingTop="64dp"
             android:layout_weight="0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -34,26 +36,36 @@
             android:gravity="center_horizontal"
             android:textStyle="bold"
             android:textSize="24sp"
-            android:background="@color/colorPrimary" />
+            android:background="@drawable/img_cardbackground"
+            android:scaleType="fitXY"
+            />
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+            >
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:id="@+id/challengeDescription"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/album_title"
+                android:background="@android:color/white"
+                android:layout_height="fill_parent" />
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="match_parent"
-            android:id="@+id/challengeDescription"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_below="@+id/challengeTitle"
-            android:layout_centerHorizontal="true"
-            android:textSize="@dimen/album_title"
-            android:background="@android:color/white"
-            android:layout_height="fill_parent" />
+            <Button
+                android:text="Let's do it!"
+                android:layout_weight="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_doit"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/rounded_textview"
 
-        <Button
-            android:text="Let's do it!"
-            android:layout_weight="0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_doit" />
+                android:elevation="1dp" />
+        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>

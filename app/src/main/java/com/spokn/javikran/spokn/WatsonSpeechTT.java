@@ -131,13 +131,14 @@ class WatsonSpeechTT {
         @Override
         public void onTranscription(SpeechResults speechResults) {
             System.out.println(speechResults);
-            String text = speechResults.getResults().get(0).getAlternatives().get(0).getTranscript();
-
+            String text = "";
             String tText="";
             try{
+                text=speechResults.getResults().get(0).getAlternatives().get(0).getTranscript();
                 tText=speechResults.getResults().get(0).getAlternatives().get(0).getTimestamps().toString();
             }
-            catch(NullPointerException e){
+            catch(NullPointerException | IndexOutOfBoundsException e){
+                text="err";
                 tText="err";
             }
             System.out.println(text);

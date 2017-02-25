@@ -12,7 +12,7 @@
         android:layout_height="220dp"
         android:largeHeap="true"
         android:hardwareAccelerated="false"
-        android:background="@drawable/btnstart"
+        android:background="@drawable/bnt_start_alt"
         android:gravity="center_vertical|center_horizontal"
         android:elevation="4dp"
         android:textColor="@color/title_text" />

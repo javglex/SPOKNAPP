@@ -5,7 +5,7 @@
     <color name="colorAccent">#f7f11e</color>
     <color name="background">#768998</color>
     <color name="backgroundProgress">#768998</color>
-    <color name="startdesc">#f7f11e</color>
+    <color name="startdesc">#ddddcc</color>
     <color name="title_text">#ffffff</color>
     <color name="gray">#D3D3D3</color>
     <color name="bodyText">#00000F</color>

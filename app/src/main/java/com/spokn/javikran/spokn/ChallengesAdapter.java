@@ -2,6 +2,8 @@ package com.spokn.javikran.spokn;
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +22,7 @@ import com.bumptech.glide.Glide;
 import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by http://www.androidhive.info/2016/05/android-working-with-card-view-and-recycler-view/ on 2/8/2017.
@@ -100,11 +103,11 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.My
                 Challenge challenge = challengeList.get(position);
                 holder.title.setText(challenge.GetName());
                 holder.desc.setText(challenge.GetShortDescription());
-
+                holder.thumbnail.setColorFilter(Color.argb(100, position*30, position*60, position*30));
                 // loading album cover using Glide library
                 Glide.with(mContext)
                         .load(challenge.GetImage())
-                        .fitCenter()
+                        .centerCrop()
                         .dontAnimate()
                         .into(holder.thumbnail);
 

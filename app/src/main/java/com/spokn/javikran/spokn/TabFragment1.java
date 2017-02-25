@@ -73,17 +73,17 @@ public class TabFragment1 extends Fragment {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground,
-                R.mipmap.img_cardbackground};
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground,
+                R.drawable.img_cardbackground};
 
         Challenge a = new Challenge(getString(R.string.challenge1_name), getString(R.string.challenge1_short),getString(R.string.challenge1_long), covers[0]);
         challengeList.add(a);
